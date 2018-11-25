@@ -95,3 +95,7 @@ function spawn() {
     enemy.x = random(width);
     enemy.y = random(height);
 }
+
+function bonusMode(number){
+    healthminus = number;
+}
