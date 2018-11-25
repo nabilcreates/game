@@ -9,6 +9,7 @@ function setup() {
         s: 20,
         health: 100,
         dead: false,
+        hit: false,
     }
 
 
@@ -49,7 +50,8 @@ function draw() {
     let collider = collideCircleCircle(player.x, player.y, 20, enemy.x, enemy.y, enemy.s)
 
     if (collider) {
-        enemy.health -= 20;
+        // IF COLLIDE, MINUS HEALTH BY ONE
+        enemy.health -= 1
     }
 
     // CHECK IF ENEMY IS DEAD
@@ -62,6 +64,8 @@ function draw() {
     if (enemy.dead) {
         enemy.health = 0;
     }
+
+    console.log(enemy.hit)
 }
 
 function drawEnemies() {

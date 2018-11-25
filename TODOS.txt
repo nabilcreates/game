@@ -1,0 +1,4 @@
+-   Fix player collision will minus the health ONCE only
+-   Add bullet (OR SWORD)
+-   Add multiple enmies (LAST)
+-   Add pathfinding to player (SOME BONUS SWEET STUFF)
