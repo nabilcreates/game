@@ -58,7 +58,7 @@ function draw() {
     }
     
     // CHECK IF ENEMY IS DEAD
-    if (enemy.health == 0) {
+    if (enemy.health <= 0) {
         enemy.dead = true;
         spawn()
         
