@@ -1,4 +1,6 @@
 let enemy, bullet, player, cnv;
+let healthminus = 1;
+let score = 0;
 
 function setup() {
     cnv = createCanvas(500, 500)
@@ -51,13 +53,17 @@ function draw() {
 
     if (collider) {
         // IF COLLIDE, MINUS HEALTH BY ONE
-        enemy.health -= 1
-    }
+        enemy.health -= healthminus
 
+    }
+    
     // CHECK IF ENEMY IS DEAD
     if (enemy.health == 0) {
         enemy.dead = true;
         spawn()
+        
+        // INCREMENT THE SCORE
+        score ++;
     }
 
     // IF DEAD THEN HEALTH = 0
