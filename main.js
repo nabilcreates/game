@@ -52,11 +52,14 @@ function draw() {
         enemy.health -= 20;
     }
 
-    if(enemy.health == 0){
+    // CHECK IF ENEMY IS DEAD
+    if (enemy.health == 0) {
         enemy.dead = true;
+        spawn()
     }
 
-    if(enemy.dead){
+    // IF DEAD THEN HEALTH = 0
+    if (enemy.dead) {
         enemy.health = 0;
     }
 }
@@ -74,4 +77,11 @@ function drawEnemies() {
     fill(255)
     ellipse(enemy.x, enemy.y, enemy.s)
     pop()
+}
+
+function spawn() {
+    enemy.dead = false;
+    enemy.health = 100;
+    enemy.x = random(width);
+    enemy.y = random(height);
 }
