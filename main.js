@@ -8,6 +8,7 @@ function setup() {
         y: random(height),
         s: 20,
         health: 100,
+        dead: false,
     }
 
 
@@ -49,6 +50,14 @@ function draw() {
 
     if (collider) {
         enemy.health -= 20;
+    }
+
+    if(enemy.health == 0){
+        enemy.dead = true;
+    }
+
+    if(enemy.dead){
+        enemy.health = 0;
     }
 }
 
